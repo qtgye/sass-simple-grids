@@ -1,14 +1,14 @@
-#Simple Grids
+# Simple Grids
 
 A simple, mobile-first SASS Grids System inspired by [Susy 3](http://oddbird.net/susy/docs/).
 This is tailored to the common grid system I use in my projects.
 
-> ####You may want to use **Susy 3** instead, if you want to:
+> #### You may want to use **Susy 3** instead, if you want to:
 > * prepare yourself for [CSS Grid Layout](https://css-tricks.com/snippets/css/complete-guide-grid/), 'cause that's why Susy 3.
 > * require asymmetric grid layout.
 > * build a more advanced grid system of your own.  
 
-> ####Why not just use Susy 3 instead?
+> #### Why not just use Susy 3 instead?
 > Two reasons:  
 > 1. Susy 3 dropped off all of mixins from 2, all it offers are functions.
 > This requires you to build wrapper mixins and functions to fully tailor it for your needs.
@@ -18,22 +18,22 @@ This is tailored to the common grid system I use in my projects.
 
 If you like to just use a straight-forward, symmetic, mobile-first grid system, then you're welcome!  
 
-##Installation
+## Installation
 Simple Grids is available as an npm module.
 ```sh
 npm install qtgye/simple-grids --save-dev
 ```
 > Take note of the vendor name, since an almost-similar name is already available ([simple-grid](https://www.npmjs.com/package/simple-grid)).
 
-##Usage
+## Usage
 ```
 @import 'path-to-node-modules/simple-grids/simple-grids';
 ```
 
 
-##What Simple Grids has to offer
+## What Simple Grids has to offer
 
-###One-stop breakpoint-specific settings
+### One-stop breakpoint-specific settings
 Just include all your grid settings for multiple breakpoints in one go:
 ```
 @include register-grids((
@@ -64,7 +64,7 @@ Just include all your grid settings for multiple breakpoints in one go:
 ));
 ```
 
-###Breakpoint mixin to make use of your breakpoint-specific settings
+### Breakpoint mixin to make use of your breakpoint-specific settings
 `@include grid-breakpoint($setting-name) { @content }`  
 
 This is similar to that of Susy 2's `susy-breakpoint` mixin.
@@ -90,5 +90,5 @@ In case you haven't notice, you don't need to pass a new grid context to the spa
 `grid-breakpoint` will make use of the named setting, making it available inside its block scope.
 Just make sure that the setting name matches one of your registered grid settings. Else, an error will be thrown out.
 
-##Available Mixins and Functions
+## Available Mixins and Functions
 > To follow :)
