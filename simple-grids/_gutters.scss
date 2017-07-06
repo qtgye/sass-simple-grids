@@ -1,0 +1,14 @@
+// @function total-gutter-units($columns, $gutters) {
+//   @return if(will-use-calc($gutters, 'gutters'), '( #{$gutters} * #{$columns - 1})', ($columns - 1) * $gutters);
+// }
+
+@function gutter($columns: false) {
+  $gutters: get-setting('gutters');
+
+  @if not is-plain-number($gutters) {
+    @return $gutters;
+  }
+
+  $container: compute-total-container($columns);
+  @return percentage($gutters/$container);
+}

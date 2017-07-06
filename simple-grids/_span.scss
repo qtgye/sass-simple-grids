@@ -1,0 +1,54 @@
+/**
+ * Usage
+ * span(1 of 5 wide)
+ */
+@function span($span) {
+
+  $column-span: nth($span, 1);
+
+  // Defaults
+  $column-spread: narrow;
+  $columns: false;
+
+  // Parse args
+  $i: 1;
+  @while $i <= length($span) {
+    $value: nth($span, $i);
+    // Column spread
+    @if null != index(wide wider, $value) {
+      $column-spread: $value;
+    // Columns
+    } @else if $value == of {
+      $i: $i + 1;
+      $columns: nth($span, $i);
+    }
+    $i: $i + 1;
+  }
+
+  @return compute-span($column-span, $column-spread, $columns);
+}
+
+
+@function compute-span($column-span: 1, $column-spread: narrow, $columns: false) {
+  $columns: if($columns, $columns, map-get($current-grid-setting, 'columns'));
+  $gutters: get-setting('gutters');
+  $container: compute-total-container($columns, $gutters);
+  $will-use-calc: not is-plain-number($gutters);
+
+  $gutter-span: if($column-span > 1, ($gutters * ($column-span - 1)), 0);
+  @if $column-spread == wide {
+    $gutter-span: $gutter-span + $gutters;
+  } @else if $column-spread == wider {
+    $gutter-span: $gutter-span + ($gutters * 2);
+  }
+
+  @if $will-use-calc {
+    $total-span: "#{$column-span} * (100% - #{$gutters * ($columns - 1)}) / #{$columns}";
+    $total-span: if($gutter-span == 0, $total-span, #{$total-span} + #{$gutter-span});
+    @return calc(#{$total-span});
+  } @else {
+    $total-span: $column-span + $gutter-span;
+    @return percentage($total-span / $container);
+  }
+
+}

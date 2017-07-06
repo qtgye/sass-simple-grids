@@ -1,0 +1,12 @@
+{
+  "name": "simple-grids",
+  "repository": "https://github.com/qtgye/simple-grids.git",
+  "version": "1.0.0",
+  "description": "A simple, mobile-first SASS Grids System inspired by Susy 3.",
+  "main": "simple-grids.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "qtgye <buquia.jace@gmail.com>",
+  "license": "ISC"
+}

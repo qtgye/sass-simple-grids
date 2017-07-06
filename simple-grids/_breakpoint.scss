@@ -1,0 +1,15 @@
+@mixin grid-breakpoint($breakpoint: base) {
+  $old: $current-grid-setting;
+  @include set-current-grid-setting($breakpoint);
+  @if $breakpoint == base {
+    @content;
+  } @else if ( map-has-key($current-grid-setting, 'breakpoint') ) {
+    $min-width: #{get-setting('breakpoint')}px;
+    @media (min-width: #{$min-width}) {
+      @content;
+    }
+  } @else {
+    @error 'A "breakpoint" key is required for a grid-setting map other than base.';
+  }
+  $current-grid-setting: $old !global;
+}

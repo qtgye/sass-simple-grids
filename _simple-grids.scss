@@ -1,0 +1,26 @@
+/**
+ * Current grid setting
+ * This is updated to account for the current grid-breakpoint
+ * @type {map}
+ */
+$current-grid-setting: (
+  columns: 12,
+  gutters: 10/20, // 10px gutter for 20px colum width
+);
+
+// Global grid settings
+// Mobile-first
+$grid-settings: (
+
+  // Default base settting, starts from 0px
+  base: $current-grid-setting,
+
+);
+
+@import "simple-grids/helpers";
+@import "simple-grids/breakpoint";
+@import "simple-grids/gutters";
+@import "simple-grids/span";
+@import "simple-grids/container";
+@import "simple-grids/grid";
+@import "simple-grids/svg";

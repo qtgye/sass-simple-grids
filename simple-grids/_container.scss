@@ -1,0 +1,9 @@
+@function compute-total-container( $columns: false, $gutters: false ) {
+  $columns: if( $columns, $columns, get-setting('columns') );
+  $gutters: if( $gutters, $gutters, get-setting('gutters') );
+  @return $columns + ($gutters * ($columns - 1));
+}
+
+@function get-total-container() {
+  @return compute-total-container();
+}

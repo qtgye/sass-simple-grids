@@ -1,0 +1,42 @@
+/**
+ * Gets a setting map from the $grid-settings map
+ * This does not alter the global $current-grid-setting
+ * @param  {string} $breakpoint: base   $grid-settings name (breakpoint)
+ * @return {map}
+ */
+@function get-grid-setting($breakpoint: base) {
+  @if ( not map-has-key($grid-settings, $breakpoint) ) {
+    @error 'Breakpoint key does not exist. Please register a grid setting.';
+  }
+  @return map-get($grid-settings, $breakpoint);
+}
+
+
+@function get-setting($key: false) {
+  @if map-has-key($current-grid-setting, $key) {
+    @return map-get($current-grid-setting, $key);
+  }
+  @return null;
+}
+
+
+/**
+ * Updates the global $current-grid-setting
+ * For safer access of the grid-settings, please use get-current-grid-setting instead
+ * @param  {string} $breakpoint: base  $grid-settings name (breakpoint)
+ * @return {void}
+ */
+@mixin set-current-grid-setting($breakpoint: base) {
+  $current-grid-setting: get-grid-setting($breakpoint) !global;
+}
+
+
+/**
+ * Registers a new grid settings
+ * This overrides the default settings
+ * @param  {map} $new-settings: $grid-settings
+ */
+@mixin register-grids($new-settings: $grid-settings) {
+  $grid-settings: map-merge($grid-settings, $new-settings) !global;
+  @include set-current-grid-setting('base');
+}
