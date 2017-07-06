@@ -26,7 +26,7 @@ npm install qtgye/simple-grids --save-dev
 > Take note of the vendor name, since an almost-similar name is already available ([simple-grid](https://www.npmjs.com/package/simple-grid)).
 
 ## Usage
-```
+```sass
 @import 'path-to-node-modules/simple-grids/simple-grids';
 ```
 
@@ -35,7 +35,7 @@ npm install qtgye/simple-grids --save-dev
 
 ### One-stop breakpoint-specific settings
 Just include all your grid settings for multiple breakpoints in one go:
-```
+```sass
 @include register-grids((
   
   // This will be default setting,
@@ -68,7 +68,7 @@ Just include all your grid settings for multiple breakpoints in one go:
 `@include grid-breakpoint($setting-name) { @content }`  
 
 This is similar to that of Susy 2's `susy-breakpoint` mixin.
-```
+```sass
 .column {
   width: span(1); // This will be calculated from the 'base' setting (8 columns)
   margin-right: gutter(); // Will compute the 'base' gutter
