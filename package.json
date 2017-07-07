@@ -1,7 +1,7 @@
 {
   "name": "sass-simple-grids",
   "repository": "https://github.com/qtgye/simple-grids.git",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A simple, mobile-first SASS Grids System inspired by Susy 3.",
   "main": "simple-grids.scss",
   "scripts": {
