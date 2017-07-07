@@ -1,0 +1,35 @@
+.wrap {
+  margin: auto;
+  width: percentage(360/375);
+  @include grid-overlay(rgba(green, .2) rgba(green, .1) rgba(green, .2));
+
+  @include grid-breakpoint(medium) {
+    width: percentage(732/768);
+  }
+
+  @include grid-breakpoint(large) {
+    width: 100%;
+    max-width: 1280px;
+  }
+}
+
+.main-header {
+  padding: 10px;
+  background-color: #888;
+  color: #fff;
+}
+
+.main-content {
+  padding: 20px 0;
+}
+
+.container {
+  padding: 10px 0;
+  background-color: rgba(green, .2);
+  @include clearfix;
+
+  &__header {
+    background-color: #999;
+    color: #eee;
+  }
+}

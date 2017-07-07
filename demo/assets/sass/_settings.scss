@@ -1,0 +1,21 @@
+// GRID SETTINGS
+@include register-grids((
+
+  base: (
+    columns: 8,
+    gutters: 10px,
+  ),
+
+  medium: (
+    breakpoint: 768,
+    columns: 8,
+    gutters: 15px,
+  ),
+
+  large: (
+    breakpoint: 1280,
+    columns: 16,
+    gutters: 20px,
+  ),
+
+));

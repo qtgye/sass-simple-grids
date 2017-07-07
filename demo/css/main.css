@@ -1,0 +1,105 @@
+/**
+ * Current grid setting
+ * This is updated to account for the current grid-breakpoint
+ * @type {map}
+ */
+/**
+ * Usage
+ * span(1 of 5 wide)
+ */
+/**
+ * Gets a setting map from the $grid-settings map
+ * This does not alter the global $current-grid-setting
+ * @param  {string} $breakpoint: base   $grid-settings name (breakpoint)
+ * @return {map}
+ */
+/**
+ * Updates the global $current-grid-setting
+ * For safer access of the grid-settings, please use get-current-grid-setting instead
+ * @param  {string} $breakpoint: base  $grid-settings name (breakpoint)
+ * @return {void}
+ */
+/**
+ * Registers a new grid settings
+ * This overrides the default settings
+ * @param  {map} $new-settings: $grid-settings
+ */
+* {
+  font-family: sans-serif;
+}
+
+.wrap {
+  margin: auto;
+  width: 96%;
+  position: relative;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url(%23susy-svg-gradient)" width="100%" %3E%3Cdefs%3E%3ClinearGradient spreadMethod="pad" id="susy-svg-gradient" x1="0%" y1="0%" x2="100%" y2="0%"%3E%3Cstop offset="0%" style="stop-color:rgba(0, 128, 0, 0.2);" /%3E%3Cstop offset="50%" style="stop-color:rgba(0, 128, 0, 0.1);" /%3E%3Cstop offset="100%" style="stop-color:rgba(0, 128, 0, 0.2);" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x="0" width="calc(1 * (100% - 70px) / 8)" height="100%"/%3E%3Crect x="calc(1 * (100% - 70px) / 8 + 10px)" width="calc(1 * (100% - 70px) / 8)" height="100%"/%3E%3Crect x="calc(2 * (100% - 70px) / 8 + 20px)" width="calc(1 * (100% - 70px) / 8)" height="100%"/%3E%3Crect x="calc(3 * (100% - 70px) / 8 + 30px)" width="calc(1 * (100% - 70px) / 8)" height="100%"/%3E%3Crect x="calc(4 * (100% - 70px) / 8 + 40px)" width="calc(1 * (100% - 70px) / 8)" height="100%"/%3E%3Crect x="calc(5 * (100% - 70px) / 8 + 50px)" width="calc(1 * (100% - 70px) / 8)" height="100%"/%3E%3Crect x="calc(6 * (100% - 70px) / 8 + 60px)" width="calc(1 * (100% - 70px) / 8)" height="100%"/%3E%3Crect x="calc(7 * (100% - 70px) / 8 + 70px)" width="calc(1 * (100% - 70px) / 8)" height="100%"/%3E%3C/svg%3E');
+}
+
+.wrap:after {
+  content: '';
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url(%23susy-svg-gradient)" width="100%" %3E%3Cdefs%3E%3ClinearGradient spreadMethod="pad" id="susy-svg-gradient" x1="0%" y1="0%" x2="100%" y2="0%"%3E%3Cstop offset="0%" style="stop-color:rgba(0, 128, 0, 0.2);" /%3E%3Cstop offset="50%" style="stop-color:rgba(0, 128, 0, 0.1);" /%3E%3Cstop offset="100%" style="stop-color:rgba(0, 128, 0, 0.2);" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x="0" width="calc(1 * (100% - 105px) / 8)" height="100%"/%3E%3Crect x="calc(1 * (100% - 105px) / 8 + 15px)" width="calc(1 * (100% - 105px) / 8)" height="100%"/%3E%3Crect x="calc(2 * (100% - 105px) / 8 + 30px)" width="calc(1 * (100% - 105px) / 8)" height="100%"/%3E%3Crect x="calc(3 * (100% - 105px) / 8 + 45px)" width="calc(1 * (100% - 105px) / 8)" height="100%"/%3E%3Crect x="calc(4 * (100% - 105px) / 8 + 60px)" width="calc(1 * (100% - 105px) / 8)" height="100%"/%3E%3Crect x="calc(5 * (100% - 105px) / 8 + 75px)" width="calc(1 * (100% - 105px) / 8)" height="100%"/%3E%3Crect x="calc(6 * (100% - 105px) / 8 + 90px)" width="calc(1 * (100% - 105px) / 8)" height="100%"/%3E%3Crect x="calc(7 * (100% - 105px) / 8 + 105px)" width="calc(1 * (100% - 105px) / 8)" height="100%"/%3E%3C/svg%3E');
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrap {
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url(%23susy-svg-gradient)" width="100%" %3E%3Cdefs%3E%3ClinearGradient spreadMethod="pad" id="susy-svg-gradient" x1="0%" y1="0%" x2="100%" y2="0%"%3E%3Cstop offset="0%" style="stop-color:rgba(0, 128, 0, 0.2);" /%3E%3Cstop offset="50%" style="stop-color:rgba(0, 128, 0, 0.1);" /%3E%3Cstop offset="100%" style="stop-color:rgba(0, 128, 0, 0.2);" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x="0" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(1 * (100% - 300px) / 16 + 20px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(2 * (100% - 300px) / 16 + 40px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(3 * (100% - 300px) / 16 + 60px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(4 * (100% - 300px) / 16 + 80px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(5 * (100% - 300px) / 16 + 100px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(6 * (100% - 300px) / 16 + 120px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(7 * (100% - 300px) / 16 + 140px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(8 * (100% - 300px) / 16 + 160px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(9 * (100% - 300px) / 16 + 180px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(10 * (100% - 300px) / 16 + 200px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(11 * (100% - 300px) / 16 + 220px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(12 * (100% - 300px) / 16 + 240px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(13 * (100% - 300px) / 16 + 260px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(14 * (100% - 300px) / 16 + 280px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3Crect x="calc(15 * (100% - 300px) / 16 + 300px)" width="calc(1 * (100% - 300px) / 16)" height="100%"/%3E%3C/svg%3E');
+  }
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    width: 95.3125%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrap {
+    width: 100%;
+    max-width: 1280px;
+  }
+}
+
+.main-header {
+  padding: 10px;
+  background-color: #888;
+  color: #fff;
+}
+
+.main-content {
+  padding: 20px 0;
+}
+
+.container {
+  padding: 10px 0;
+  background-color: rgba(0, 128, 0, 0.2);
+}
+
+.container:before, .container:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.container__header {
+  background-color: #999;
+  color: #eee;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -90,5 +90,13 @@ In case you haven't notice, you don't need to pass a new grid context to the spa
 `grid-breakpoint` will make use of the named setting, making it available inside its block scope.
 Just make sure that the setting name matches one of your registered grid settings. Else, an error will be thrown out.
 
+
+## Demo 
+The npm package includes demo files.  
+
+* Go to the `node_modules/sass-simple-grids` folder.
+* Run `npm install`.
+* Run `npm run demo`. This will compile demo assets and boot up a server at `localhost:3131` for the demo page.
+
 ## Available Mixins and Functions
 > To follow :)

@@ -5,8 +5,14 @@
   "description": "A simple, mobile-first SASS Grids System inspired by Susy 3.",
   "main": "simple-grids.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "demo": "gulp demo"
   },
   "author": "qtgye <buquia.jace@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^6.0.0-15",
+    "laravel-elixir-browsersync-official": "^1.0.0"
+  }
 }
