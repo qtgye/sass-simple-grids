@@ -21,17 +21,16 @@ If you like to just use a straight-forward, symmetic, mobile-first grid system, 
 ## Installation
 Simple Grids is available as an npm module.
 ```sh
-npm install qtgye/simple-grids --save-dev
+npm install sass-simple-grids --save-dev
 ```
-> Take note of the vendor name, since an almost-similar name is already available ([simple-grid](https://www.npmjs.com/package/simple-grid)).
 
 ## Usage
 ```sass
-@import 'path-to-node-modules/simple-grids/simple-grids';
+@import 'path-to-node-modules/sass-simple-grids/simple-grids';
 ```
 
 
-## What Simple Grids has to offer
+## What SSG has to offer
 
 ### One-stop breakpoint-specific settings
 Just include all your grid settings for multiple breakpoints in one go:
@@ -65,9 +64,14 @@ Just include all your grid settings for multiple breakpoints in one go:
 ```
 
 ### Breakpoint mixin to make use of your breakpoint-specific settings
-`@include grid-breakpoint($setting-name) { @content }`  
+```sass
+@include grid-breakpoint($setting-name) {
+  @content
+}
+```
 
-This is similar to that of Susy 2's `susy-breakpoint` mixin.
+This is similar to that of Susy 2's `susy-breakpoint` mixin. The difference is that you don't have to pass a raw media query together with a layout map,
+just the name of your registered grid setting:
 ```sass
 .column {
   width: span(1); // This will be calculated from the 'base' setting (8 columns)
