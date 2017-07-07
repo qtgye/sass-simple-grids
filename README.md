@@ -104,3 +104,8 @@ The npm package includes demo files.
 
 ## Available Mixins and Functions
 > To follow :)
+
+## To Do:
+- [] Push/Pull mixin (?)
+- [] Readme file: mixins and functions doc.
+
