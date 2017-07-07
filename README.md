@@ -37,23 +37,30 @@ Just include all your grid settings for multiple breakpoints in one go:
 ```sass
 @include register-grids((
   
-  // This will be default setting,
-  // If grid functions/mixins are used outside of grid-breakpoint()
+  /*
+   * This will be default setting,
+   * if grid functions/mixins are used outside of grid-breakpoint().
+   */
   base: (
     columns: 8,
     gutters: 1/4, // or .25
   ),
 
-  // Succeeding breakpoints require a 'breakpoint' key,
-  // which will be used as the min-width media query
+  /**
+   * Succeeding breakpoints require a 'breakpoint' key,
+   * which will be used as the min-width media query.
+   * It can be a unitless number, which will be suffixed with `px`.
+   */
   medium: (
     breakpoint: 768,
     columns: 12,
     gutters: .15,
   ),
 
-  // Static gutters are accepted,
-  // `calc` will be used here for span calculations
+  /**
+   * Static gutters are accepted,
+   * `calc` will be used here for span calculations
+   */
   large: (
     breakpoint: 1280,
     columns: 16,
@@ -74,18 +81,18 @@ This is similar to that of Susy 2's `susy-breakpoint` mixin. The difference is t
 just the name of your registered grid setting:
 ```sass
 .column {
-  width: span(1); // This will be calculated from the 'base' setting (8 columns)
+  width: span(1); /* This will be calculated from the 'base' setting (8 columns) */
   margin-right: gutter(); // Will compute the 'base' gutter
   
-  // Just pass the setting name to the mixin
+  /* Just pass the setting name to the mixin */
   @include grid-breakpoint('medium') {
-    width: span(1); // This will be calculated from the 'medium' setting (12 columns)
-    margin-right: gutter(); // Will compute the 'medium' gutter
+    width: span(1); /* This will be calculated from the 'medium' setting (12 columns) */
+    margin-right: gutter(); /* Will compute the 'medium' gutter */
   }
 
   @include grid-breakpoint('large') {
-    width: span(1); // This will be calculated from the 'large' setting (16 columns)
-    margin-right: gutter(); // Will compute the 'large' gutter
+    width: span(1); /* This will be calculated from the 'large' setting (16 columns) */
+    margin-right: gutter(); /* Will compute the 'large' gutter */
   }
 
 }

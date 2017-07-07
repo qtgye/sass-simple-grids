@@ -4,7 +4,8 @@
   @if $breakpoint == base {
     @content;
   } @else if ( map-has-key($current-grid-setting, 'breakpoint') ) {
-    $min-width: #{get-setting('breakpoint')}px;
+    $min-width: get-setting('breakpoint');
+    $min-width: if(unitless($min-width), #{$min-width}px, $min-width);
     @media (min-width: #{$min-width}) {
       @content;
     }
