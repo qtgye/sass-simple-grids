@@ -113,6 +113,7 @@ The npm package includes demo files.
 > To follow :)
 
 ## To Do:
+- [] Smart breakpoint mixin (passing a second arg whether to use min-width, max-width, or both)
 - [] Push/Pull mixin (?)
 - [] Readme file: mixins and functions doc.
 
