@@ -103,3 +103,12 @@
 
   @return '%3Crect x="#{$x}" width="#{$width}" height="100%"/%3E';
 }
+
+
+@function unsigned($number: 0) {
+  @if type-of($number) == number {
+    @return if($number > 0, $number, -$number);
+  } @else {
+    @return $number;
+  }
+}
