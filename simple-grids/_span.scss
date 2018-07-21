@@ -51,7 +51,7 @@
   $container: compute-total-container($columns, $gutters);
   $will-use-calc: not is-plain-number($gutters);
 
-  $gutter-span: if($column-span > 1, ($gutters * ($column-span - 1)), 0);
+  $gutter-span: if(unsigned($column-span) > 1, ($gutters * (unsigned($column-span) - 1)), 0);
   @if $column-spread == wide {
     $gutter-span: $gutter-span + $gutters;
   } @else if $column-spread == wider {
@@ -59,11 +59,12 @@
   }
 
   @if $will-use-calc {
-    $total-span: "#{$column-span} * (100% - #{$gutters * ($columns - 1)}) / #{$columns}";
+    $total-span: "#{unsigned($column-span)} * (100% - #{$gutters * ($columns - 1)}) / #{$columns}";
     $total-span: if($gutter-span == 0, $total-span, #{$total-span} + #{$gutter-span});
-    @return calc(#{$total-span});
+    $total-span: if($column-span < 0, "(#{$total-span}) * -1", $total-span);
+    @return calc(#{unquote(#{$total-span})});
   } @else {
-    $total-span: $column-span + $gutter-span;
+    $total-span: unsigned($column-span) + $gutter-span;
     @return percentage($total-span / $container);
   }
 
