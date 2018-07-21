@@ -9,6 +9,8 @@
   // Defaults
   $column-spread: narrow;
   $columns: false;
+  $grid-setting: false;
+  $computed-span: null;
 
   // Parse args
   $i: 1;
@@ -21,11 +23,25 @@
     } @else if $value == of {
       $i: $i + 1;
       $columns: nth($span, $i);
+    // Context
+    } @else if $value == at {
+      $i: $i + 1;
+      $grid-setting: get-grid-setting(nth($span, $i));
     }
     $i: $i + 1;
   }
 
-  @return compute-span($column-span, $column-spread, $columns);
+  @if $grid-setting == false {
+    $computed-span: compute-span($column-span, $column-spread, $columns);
+  // Temporarily override current grid context if given
+  } @else {
+    $old: $current-grid-setting;
+    $current-grid-setting: $grid-setting !global;
+    $computed-span: compute-span($column-span, $column-spread, $columns);
+    $current-grid-setting: $old !global;
+  }
+
+  @return $computed-span;
 }
 
 
