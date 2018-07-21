@@ -1,9 +1,16 @@
-// @function total-gutter-units($columns, $gutters) {
-//   @return if(will-use-calc($gutters, 'gutters'), '( #{$gutters} * #{$columns - 1})', ($columns - 1) * $gutters);
-// }
+@function gutter($breakpoint_name: false) {
+  $gutters: null;
 
-@function gutter($columns: false) {
-  $gutters: get-setting('gutters');
+  // Temporarily override grid setting if override is given
+  @if $breakpoint_name {
+    $old: $current-grid-setting;
+    $current-grid-setting: get-grid-setting($breakpoint_name) !global;
+    $gutters: get-setting('gutters');
+    $current-grid-setting: $old !global;
+  }
+  @else {
+    $gutters: get-setting('gutters');
+  }
 
   @if not is-plain-number($gutters) {
     @return $gutters;
